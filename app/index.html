@@ -179,9 +179,10 @@
 
 <div class="container">
   <div class="columns profilecols js-username" data-name="al-the-x">
-    <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person" ng-app="al-the-x.github.app">
-        <a href="/account" aria-label="Change your avatar" class="vcard-avatar tooltipped tooltipped-s" ng-show="user">
-        <img alt="" class="avatar" height="230" width="230" ng-src="{{user.avatar_url}}" ng-attr-title="{{user.login}}">
+    <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person" ng-app="al-the-x.github.app"
+      ng-controller="MainCtrl as app">
+        <a href="/account" aria-label="Change your avatar" class="vcard-avatar tooltipped tooltipped-s" ng-show="app.user">
+        <img alt="" class="avatar" height="230" width="230" ng-src="{{app.user.avatar_url}}" ng-attr-title="{{app.user.login}}">
         <!--
           <img alt="" class="avatar" data-user="96015" height="230" src="https://avatars3.githubusercontent.com/u/96015?v=2&amp;s=460"
           width="230" />
@@ -189,15 +190,15 @@
         </a>
 
       <h1 class="vcard-names">
-  <span class="vcard-fullname" itemprop="name">David Rogers</span>
-  <span class="vcard-username" itemprop="additionalName">al-the-x</span>
+  <span class="vcard-fullname" itemprop="name">{{app.user.name}}</span>
+  <span class="vcard-username" itemprop="additionalName">{{app.user.login}}</span>
 </h1>
 
 
 <ul class="vcard-details">
-      <li class="vcard-detail" itemprop="worksFor"><span class="octicon octicon-organization"></span>ethos Development</li>
+      <li class="vcard-detail" itemprop="worksFor"><span class="octicon octicon-organization"></span>{{app.user.company}}</li>
 
-  <li class="vcard-detail" itemprop="homeLocation"><span class="octicon octicon-location"></span>Orlando, FL</li>
+  <li class="vcard-detail" itemprop="homeLocation"><span class="octicon octicon-location"></span>{{app.user.location}}</li>
     <li class="vcard-detail"><span class="octicon octicon-mail"></span><a class="email" href="mailto:&#x68;&#x65;&#x6c;&#x6c;&#x6f;&#x40;&#x61;&#x6c;&#x2d;&#x74;&#x68;&#x65;&#x2d;&#x78;&#x2e;&#x6d;&#x65;">&#x68;&#x65;&#x6c;&#x6c;&#x6f;&#x40;&#x61;&#x6c;&#x2d;&#x74;&#x68;&#x65;&#x2d;&#x78;&#x2e;&#x6d;&#x65;</a></li>
   <li class="vcard-detail" itemprop="url"><span class="octicon octicon-link"></span><a href="http://al-the-x.me" class="url" rel="nofollow me">http://al-the-x.me</a></li>
   <li class="vcard-detail"><span class="octicon octicon-clock"></span><span class="join-label">Joined on </span><time class="join-date" datetime="2009-06-16T17:54:00Z" day="numeric" is="local-time" month="short" year="numeric">Jun 16, 2009</time></li>
@@ -219,8 +220,9 @@
         </a>
       </div>
 
-        <div class="clearfix">
+        <div class="clearfix" ng-controller="OrgCtrl as orgs">
           <h3>Organizations</h3>
+            <a ng-repeat="org in app.user.orgs">{{app.user.name}} -- Org {{org}}</a>
             <a href="/orlandophp" aria-label="orlandophp" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="Orlando PHP User Group" class="avatar" data-user="170322" height="42" src="https://avatars0.githubusercontent.com/u/170322?v=2&amp;s=84" width="42" /></a>
             <a href="/orlandodojo" aria-label="orlandodojo" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="Orlando Dojo" class="avatar" data-user="311274" height="42" src="https://avatars0.githubusercontent.com/u/311274?v=2&amp;s=84" width="42" /></a>
             <a href="/CodingDojo" aria-label="CodingDojo" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="Coding Dojo" class="avatar" data-user="383485" height="42" src="https://avatars3.githubusercontent.com/u/383485?v=2&amp;s=84" width="42" /></a>
