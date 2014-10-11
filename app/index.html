@@ -625,27 +625,22 @@
       Something went wrong with that request. Please try again.
     </div>
 
-
-      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-f4749195ce218608caf72b3ddefff5f580445386f2529c60e027cd18d1db0cb5.js" type="text/javascript"></script>
-      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-56901a1e60b184d90b134d3f30a8700dee7e5d313a3a70e28f6adb239d7d8797.js" type="text/javascript"></script>
-
-
-        <script async src="https://www.google-analytics.com/analytics.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <script type="text/javascript">
-      angular.module('al-the-x.github.app', [ ])
-        .run(function($http, $rootScope){
-          $http.get('https://api.github.com/users/al-the-x')
-            .success(function(data){
-              debugger;
-              $rootScope.user = data;
-            });
-        });
-    </script>
+    <script type="text/javascript" src="scripts/al-the-x.github.app.js"></script>
+
+    <!--
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-f4749195ce218608caf72b3ddefff5f580445386f2529c60e027cd18d1db0cb5.js" type="text/javascript"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-56901a1e60b184d90b134d3f30a8700dee7e5d313a3a70e28f6adb239d7d8797.js" type="text/javascript"></script>
+    -->
+
+
+        <script async src="https://www.google-analytics.com/analytics.js"></script>
   </body>
 </html>
